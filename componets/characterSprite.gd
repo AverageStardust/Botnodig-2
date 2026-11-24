@@ -1,0 +1,18 @@
+extends Sprite2D
+class_name CharacterSprite
+
+const FRAME_PER_SECOND = 3
+const FLIP_TIME_SECONDS = 0.13
+
+var is_flipped: bool = false
+var _facing_angle: float = 0
+
+func _process(delta: float) -> void:
+	frame = int(Time.get_ticks_msec() / 1000.0 * FRAME_PER_SECOND) % 2
+	
+	if is_flipped:
+		_facing_angle = move_toward(_facing_angle, PI, delta / FLIP_TIME_SECONDS)
+	else:
+		_facing_angle = move_toward(_facing_angle, 0, delta / FLIP_TIME_SECONDS)
+	
+	scale.x = cos(_facing_angle)
