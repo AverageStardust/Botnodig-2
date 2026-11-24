@@ -4,7 +4,7 @@ This is a remake of my [bitsy game](https://averagestardust.itch.io/botnotig).
 ## Proposal
 I'll be remaking my Bitsy experiment because I don't feel like it has any substantiation gameplay.
 
-## Plan
+### Plan
 1. Remake the player movement, bone collection, dialog and NPCs in Godot 4.7 using the original art and one of my already existing pixel fonts
 2. Implement a camera that locks to separate "screens" inside one contiguous tilemap
 3. Add Sokoban-like box pushing
@@ -13,7 +13,7 @@ I'll be remaking my Bitsy experiment because I don't feel like it has any substa
 6. Create 2 easy puzzles branching off the first screen with the skeleton
 7. Create 3 harder puzzles locked behind the completion of an earlier puzzle
 
-## Goals
+### Goals
 - I'd like to extend the playtime with content that requires more thought than just walking around like the original.
 - I liked the humour of the cat in the original game, I'd like to make more moments that make playtesters to chuckle.
 - Add a level of juice not possible in Bitsy, for example: tweening the player between tiles while moving
