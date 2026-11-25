@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://c2jekma2vnrjk"]
+
+[ext_resource type="Script" uid="uid://cwhubsirgjkt4" path="res://componets/roomsCamera.gd" id="1_maix1"]
+[ext_resource type="Shader" uid="uid://bx5oja7chkq4s" path="res://componets/paletteShader.gdshader" id="2_bqm0r"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_maix1"]
+shader = ExtResource("2_bqm0r")
+shader_parameter/background_color = Color(0, 0, 0, 1)
+shader_parameter/tile_color = Color(0.5, 0.5, 0.5, 1)
+shader_parameter/sprite_color = Color(1, 1, 1, 1)
+
+[node name="RoomsCamera" type="Area2D" unique_id=244360083]
+script = ExtResource("1_maix1")
+
+[node name="PaletteLayer" type="CanvasLayer" parent="." unique_id=943761893]
+
+[node name="PaletteRect" type="ColorRect" parent="PaletteLayer" unique_id=1969367984]
+material = SubResource("ShaderMaterial_maix1")
+offset_right = 128.0
+offset_bottom = 128.0
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1392543199]
+limit_smoothed = true
+position_smoothing_enabled = true

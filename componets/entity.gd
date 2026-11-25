@@ -61,16 +61,16 @@ func _check_grid(offset: Vector2) -> bool:
 	# If moving, check both current and future position.
 	if _future_grid_position != _grid_position:
 		# Don't move if there is anything in the way.
-		query.position = _grid_position + Vector2(GRID_SIZE, GRID_SIZE) / 2 + offset
+		query.position = get_current_grid_position() + offset
 		if space_state.intersect_point(query, 1).size() > 0:
 			return false
 		
 		# Don't move if there will be anything in the way.
-		query.position = _future_grid_position + Vector2(GRID_SIZE, GRID_SIZE) / 2 + offset
+		query.position = get_target_grid_position() + offset
 		if space_state.intersect_point(query, 1).size() > 0:
 			return false
 	else:
-		query.position = _grid_position + Vector2(GRID_SIZE, GRID_SIZE) / 2 + offset
+		query.position = get_current_grid_position() + offset
 		var blocking_bodies = space_state.intersect_point(query, 2)
 		
 		# Don't move if there are multible entities, or any non-entities in the way.
@@ -80,10 +80,18 @@ func _check_grid(offset: Vector2) -> bool:
 			var body = blocking_bodies[0].collider
 			if body is Entity:
 				# Try to push one entity if present.
-				if not body.move(offset):
+				if body.move(offset):
+					body._speed = _speed
+				else:
 					return false
 			else:
 				return false
 	
 	_future_grid_position += offset
 	return true
+
+func get_current_grid_position():
+	return _grid_position + Vector2(GRID_SIZE, GRID_SIZE) / 2 
+
+func get_target_grid_position():
+	return _future_grid_position + Vector2(GRID_SIZE, GRID_SIZE) / 2 

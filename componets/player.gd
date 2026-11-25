@@ -2,9 +2,6 @@ extends Entity
 
 @onready var _sprite: CharacterSprite = $CharacterSprite
 
-func _ready() -> void:
-	pass
-
 func _process(_delta: float) -> void:
 	# We need seperate dead zones in the x and y axies.
 	# Otherwise it will be immposible to walk straight on joystick.
