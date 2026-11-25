@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://d0drdjqsvi3ys"]
 
-[ext_resource type="Script" uid="uid://dogw1b3y46i76" path="res://scripts/entity.gd" id="1_qrx01"]
+[ext_resource type="Script" uid="uid://fbgg6et4ikbu" path="res://scripts/crate.gd" id="1_rb2yb"]
 [ext_resource type="Texture2D" uid="uid://dhcmgrytfakqt" path="res://art/crate.png" id="2_qrx01"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2lhdj"]
 size = Vector2(8, 8)
 
 [node name="Crate" type="CharacterBody2D" unique_id=1202694334]
-script = ExtResource("1_qrx01")
+script = ExtResource("1_rb2yb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=163173072]
 position = Vector2(4, 4)

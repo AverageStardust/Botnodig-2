@@ -13,23 +13,23 @@ var _speed: float = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	_grid_position = (position / GRID_SIZE).round() * GRID_SIZE
+	_grid_position = (global_position / GRID_SIZE).round() * GRID_SIZE
 	_future_grid_position = _grid_position
-	position = _grid_position
+	global_position = _grid_position
 
 func _process(delta: float) -> void:
-	if position == _future_grid_position:
+	if global_position == _future_grid_position:
 		_speed = 0
 	else:
 		_speed = lerp(_speed, MAX_SPEED, delta * ACCELERATION)
 		
-	position = position.move_toward(_future_grid_position, delta * _speed)
+	global_position = global_position.move_toward(_future_grid_position, delta * _speed)
 	
-	if position.x == _future_grid_position.x:
+	if global_position.x == _future_grid_position.x:
 		_grid_position.x = _future_grid_position.x
 		_is_moving_horizontal = false
 	
-	if position.y == _future_grid_position.y:
+	if global_position.y == _future_grid_position.y:
 		_grid_position.y = _future_grid_position.y
 		_is_moving_vertical = false
 
