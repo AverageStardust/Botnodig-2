@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://ca0i7p1gfjc3v"]
+
+[ext_resource type="Script" uid="uid://6jr3q5n2nb5l" path="res://scripts/bone.gd" id="1_txreb"]
+[ext_resource type="Texture2D" uid="uid://dupqqudgjxwhn" path="res://art/bone.png" id="2_txreb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2lhdj"]
+size = Vector2(4, 4)
+
+[node name="Bone" type="Area2D" unique_id=2069666873]
+script = ExtResource("1_txreb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=319690498]
+position = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_2lhdj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2146735225]
+z_index = -1
+position = Vector2(4, 4)
+texture = ExtResource("2_txreb")

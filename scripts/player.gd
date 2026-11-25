@@ -1,4 +1,7 @@
 extends Entity
+class_name Player
+
+var _bones = 0
 
 @onready var _sprite: CharacterSprite = $CharacterSprite
 
@@ -14,3 +17,6 @@ func _process(_delta: float) -> void:
 		_sprite.is_flipped = x_direction < 0
 	
 	super._process(_delta)
+
+func collect_bone():
+	_bones += 1

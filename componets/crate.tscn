@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d0drdjqsvi3ys"]
 
-[ext_resource type="Script" uid="uid://dogw1b3y46i76" path="res://componets/entity.gd" id="1_qrx01"]
+[ext_resource type="Script" uid="uid://dogw1b3y46i76" path="res://scripts/entity.gd" id="1_qrx01"]
 [ext_resource type="Texture2D" uid="uid://dhcmgrytfakqt" path="res://art/crate.png" id="2_qrx01"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2lhdj"]
