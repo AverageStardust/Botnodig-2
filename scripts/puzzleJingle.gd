@@ -1,4 +1,7 @@
 extends AudioStreamPlayer2D
+class_name PuzzleJingle
+
+signal complete_room
 
 const TRIGGER_TIME = 0.9
 
@@ -25,6 +28,7 @@ func _process(delta: float) -> void:
 		if _trigger_progress >= TRIGGER_TIME and not _triggered:
 			_triggered = true
 			play()
+			complete_room.emit()
 	else:
 		_trigger_progress = 0
 
@@ -32,5 +36,4 @@ func _on_input(active: bool):
 	_active = active
 
 func reset():
-	if _trigger_progress < 0:
-		_triggered = false
+	_triggered = false

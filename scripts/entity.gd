@@ -1,6 +1,8 @@
 extends CharacterBody2D
 class_name Entity
 
+signal ran_into(node: Node2D)
+
 const GRID_SIZE = 8
 const MAX_SPEED = 36.0
 const ACCELERATION = 12.0
@@ -92,6 +94,7 @@ func _check_grid(offset: Vector2) -> bool:
 				else:
 					return false
 			else:
+				ran_into.emit(body)
 				return false
 	
 	_future_grid_position += offset

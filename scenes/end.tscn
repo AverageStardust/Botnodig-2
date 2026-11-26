@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cgq30vpcv8xau"]
+
+[node name="End" type="Control" unique_id=906707545]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Text" type="Label" parent="." unique_id=206621686]
+custom_minimum_size = Vector2(56, 9)
+layout_mode = 0
+offset_left = 36.0
+offset_top = 60.0
+offset_right = 92.0
+offset_bottom = 69.0
+theme_override_constants/line_spacing = 3
+theme_override_font_sizes/font_size = 9
+text = "The End"
+horizontal_alignment = 1
+autowrap_mode = 2

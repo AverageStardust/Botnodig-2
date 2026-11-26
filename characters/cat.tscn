@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://crmwxuo3u7m6m"]
+
+[ext_resource type="Script" uid="uid://drgng4ldk8h4f" path="res://scripts/dialog.gd" id="1_oqvr0"]
+[ext_resource type="Texture2D" uid="uid://benq550jyf0jo" path="res://art/cat.png" id="2_oqvr0"]
+[ext_resource type="Script" uid="uid://db0si68iqf5xh" path="res://scripts/characterSprite.gd" id="3_bhynm"]
+[ext_resource type="AudioStream" uid="uid://xlhdxhx0bdv6" path="res://sounds/jingles_PIZZI09.ogg" id="4_2vyfe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2lhdj"]
+size = Vector2(8, 8)
+
+[node name="Cat" type="StaticBody2D" unique_id=1654457295]
+script = ExtResource("1_oqvr0")
+_lines = Array[String](["* Meow meow *", "(There was something hard and rough in my wet food.)", "* Meow meow, meoooww *", "(I wish my owner would buy Fancy Feast, not that off brand crap.)", "* Bark bark? *", "(So what was in your food?)", "* Meow, meooww *", "(I'm not sure, let me hack it up...)"])
+_gives_bone = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2008272035]
+position = Vector2(4, 4)
+texture = ExtResource("2_oqvr0")
+hframes = 2
+script = ExtResource("3_bhynm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=505782064]
+position = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_2lhdj")
+
+[node name="DialogSound" type="AudioStreamPlayer2D" parent="." unique_id=1387796290]
+position = Vector2(4, 8)
+stream = ExtResource("4_2vyfe")
+volume_db = -8.0

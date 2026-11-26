@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bo02f7vjkpbal"]
+
+[ext_resource type="Script" uid="uid://drgng4ldk8h4f" path="res://scripts/dialog.gd" id="1_igspw"]
+[ext_resource type="Texture2D" uid="uid://hdxoeh53qcir" path="res://art/skull.png" id="2_2krii"]
+[ext_resource type="PackedScene" uid="uid://b6an8fn5cvkyt" path="res://scenes/ending.tscn" id="2_ehn5s"]
+[ext_resource type="Script" uid="uid://db0si68iqf5xh" path="res://scripts/characterSprite.gd" id="3_n32mm"]
+[ext_resource type="AudioStream" uid="uid://dywpadsseti16" path="res://sounds/jingles_STEEL09.ogg" id="4_ivaqv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xa74e"]
+size = Vector2(8, 8)
+
+[node name="Skull" type="StaticBody2D" unique_id=1654457295]
+script = ExtResource("1_igspw")
+_lines = Array[String](["I was tired of sleeping in that dirty hole.", "Wait a minute... something is wrong.", "Oh silly me, I lost all my bones while climbing out!", "Could you help find me find 5 bones?", "* Woof, bark baark *", "(Sure thing, I love finding bones!)"])
+_alt_lines = Array[String](["Thank you dog! This should be enough bones.", "Just give me a moment..."])
+_alt_bone_requirement = 5
+_alt_loads_scene = ExtResource("2_ehn5s")
+_show_bones = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2008272035]
+position = Vector2(4, 4)
+texture = ExtResource("2_2krii")
+hframes = 8
+script = ExtResource("3_n32mm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=505782064]
+position = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_xa74e")
+
+[node name="DialogSound" type="AudioStreamPlayer2D" parent="." unique_id=42009605]
+position = Vector2(4, 8)
+stream = ExtResource("4_ivaqv")
+volume_db = -8.0

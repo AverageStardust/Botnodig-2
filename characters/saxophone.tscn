@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://6ggf6jsc0vhc"]
+
+[ext_resource type="Script" uid="uid://drgng4ldk8h4f" path="res://scripts/dialog.gd" id="1_sxpwb"]
+[ext_resource type="Texture2D" uid="uid://jgv51ob8cj85" path="res://art/saxophone.png" id="2_sxpwb"]
+[ext_resource type="Script" uid="uid://db0si68iqf5xh" path="res://scripts/characterSprite.gd" id="3_d0h4p"]
+[ext_resource type="AudioStream" uid="uid://c10wqlchwojys" path="res://sounds/jingles_SAX09.ogg" id="4_h383e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2lhdj"]
+size = Vector2(8, 8)
+
+[node name="Saxophone" type="StaticBody2D" unique_id=1654457295]
+script = ExtResource("1_sxpwb")
+_lines = Array[String](["* Aarf woof woof? *", "(What are you, a crack pipe?)", "How rude, I'm clearly a saxophone!", "Can't you see the musical notes floating out of my bell?", "I'm the one that plays a jingle when you finish a puzzle, you ungrateful dog.", "* Woof baark baark? *", "(Wait and you can speak English too?)", "* Buhomu hooooom *", "(Oh my bad.)", "* Bhoom, hoooooooom. Buhoomu hoom *", "(Wait, I have something for you. I found it in my spit valve.)"])
+_gives_bone = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2008272035]
+position = Vector2(4, 4)
+texture = ExtResource("2_sxpwb")
+hframes = 4
+script = ExtResource("3_d0h4p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=505782064]
+position = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_2lhdj")
+
+[node name="DialogSound" type="AudioStreamPlayer2D" parent="." unique_id=232561660]
+position = Vector2(4, 8)
+stream = ExtResource("4_h383e")
+volume_db = -8.0

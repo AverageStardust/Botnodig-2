@@ -9,7 +9,7 @@ var is_complete = false
 
 func _ready() -> void:
 	for node in get_children():
-		if node is Bone:
+		if node is PuzzleJingle:
 			node.complete_room.connect(complete)
 
 func reset():

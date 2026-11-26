@@ -10,7 +10,7 @@ func _ready() -> void:
 	_states.resize(inputs.size())
 	
 	for i in range(inputs.size()):
-		inputs[i].connect("output", _on_input.bind(i))
+		inputs[i].output.connect(_on_input.bind(i))
 		_states[i] = false
 
 func _on_input(active: bool, index: int):

@@ -1,8 +1,6 @@
 extends Area2D
 class_name Bone
 
-signal complete_room
-
 const FLOAT_SPEED = 32
 const FADE_SPEED = 1.25
 
@@ -23,6 +21,5 @@ func _process(_delta: float) -> void:
 			if body is Player:
 				body.collect_bone()
 				_collected = true
-				complete_room.emit()
 				
 				_pickup_sound.play()
