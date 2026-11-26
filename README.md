@@ -2,7 +2,7 @@
 This is a remake of my [bitsy game](https://averagestardust.itch.io/botnotig).
 
 ## Credits
-- Programming and Art: Wren Durbano
+- Programming, font and art: Wren Durbano
 - Sounds: [Kenney](https://kenney.nl/assets/category:Audio) Sound Packs (Inpact Sounds, RPG Audio, UI Audio, Music Jingles)
 
 ## Proposal
