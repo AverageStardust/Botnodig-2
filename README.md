@@ -14,10 +14,9 @@ I'll be remaking my Bitsy experiment because I don't feel like it has any substa
 3. Add Sokoban-like box pushing
 4. Make Sokoban blocks reset if the player moves to another screen without finishing the puzzle (by collecting the bone at the end)
 5. Add doors that can be opened by depressing a pressure plate with the weight of a box or the player
-6. Create 2 easy puzzles branching off the first screen with the skeleton
-7. Create 3 harder puzzles locked behind the completion of an earlier puzzle
+6. Create a few easy puzzles branching off the first screen with the skeleton
 
 ### Goals
-- I'd like to extend the playtime with content that requires more thought than just walking around like the original.
+- I'd like to extend, or at least enrich, the playtime with content that requires more thought than just walking around like the original.
 - I liked the humour of the cat in the original game, I'd like to make more moments that make playtesters to chuckle.
 - Add a level of juice not possible in Bitsy, for example: tweening the player between tiles while moving
