@@ -55,7 +55,7 @@ metadata/_custom_type_script = "uid://dh43ejpbil6sl"
 
 [node name="Skull" parent="RoomManager/Room1" unique_id=1654457295 instance=ExtResource("14_o8fc1")]
 position = Vector2(24, 8)
-_lines = Array[String](["I was tired of sleeping in that dirty hole.", "Wait a minute... something is wrong.", "Oh silly me, I lost all my bones while climbing out!", "Could you help find me find 5 bones?", "* Woof bark baark *", "(Sure thing, I love finding bones!)"])
+_lines = Array[String](["I was tired of sleeping in that dirty hole.", "Wait a minute... something is wrong.", "Oh silly me, I lost all my bones while climbing out!", "Could you help find me find 6 bones?", "* Woof bark baark *", "(Sure thing, I love finding bones!)"])
 
 [node name="Bone" parent="RoomManager/Room1" unique_id=825234777 instance=ExtResource("4_7r4gi")]
 position = Vector2(-32, -48)
