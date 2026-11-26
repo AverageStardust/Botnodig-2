@@ -23,6 +23,12 @@ window/size/window_width_override=512
 window/size/window_height_override=512
 window/stretch/mode="canvas_items"
 
+[global_group]
+
+PuzzleInputs=""
+PuzzleResets=""
+PuzzleLocks=""
+
 [godots]
 
 version_hint=""

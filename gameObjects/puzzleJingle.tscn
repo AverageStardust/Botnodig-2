@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://c0suq4k7ha8py"]
+
+[ext_resource type="Script" uid="uid://ctgn47vbyyjy4" path="res://scripts/puzzleJingle.gd" id="1_1einb"]
+[ext_resource type="AudioStream" uid="uid://caoh4g1pnjs64" path="res://sounds/jingles_SAX02.ogg" id="1_lt8f3"]
+
+[node name="PuzzleJingle" type="AudioStreamPlayer2D" unique_id=1484260657 groups=["PuzzleResets"]]
+position = Vector2(4, 8)
+stream = ExtResource("1_lt8f3")
+volume_db = 2.0
+script = ExtResource("1_1einb")

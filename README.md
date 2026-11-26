@@ -1,6 +1,10 @@
 # Botnodig 2
 This is a remake of my [bitsy game](https://averagestardust.itch.io/botnotig).
 
+## Credits
+Programming and Art: Wren
+Sounds: [Kenney](https://kenney.nl/assets/category:Audio) Sound Packs (Inpact Sounds, RPG Audio, UI Audio, Music Jingles)
+
 ## Proposal
 I'll be remaking my Bitsy experiment because I don't feel like it has any substantiation gameplay.
 

@@ -4,6 +4,8 @@ extends Area2D
 @export var palette_layer: PaletteLayer
 @export var camera: Camera
 
+var _preivous_room: Room
+
 func _process(_delta: float) -> void:
 	var space_state = get_world_2d().direct_space_state
 	var query = PhysicsPointQueryParameters2D.new()
@@ -13,7 +15,13 @@ func _process(_delta: float) -> void:
 	
 	for collision in space_state.intersect_point(query):
 		if collision.collider == self:
-			var room = collision.collider.shape_owner_get_owner(collision.shape)
+			var room: Room = collision.collider.shape_owner_get_owner(collision.shape)
+			
+			if _preivous_room != room:
+				if not room.is_complete:
+					room.reset()
+					
+				_preivous_room = room
 			
 			palette_layer.set_room(room)
 			

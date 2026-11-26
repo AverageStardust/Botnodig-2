@@ -2,11 +2,13 @@
 
 [ext_resource type="Script" uid="uid://dunb8gn4ua0h0" path="res://scripts/pressurePlate.gd" id="1_80g1c"]
 [ext_resource type="Texture2D" uid="uid://d3w874ux0g8ur" path="res://art/pressurePlate.png" id="1_dh3xf"]
+[ext_resource type="AudioStream" uid="uid://m1fann4v78ny" path="res://sounds/switch21.ogg" id="3_ibqte"]
+[ext_resource type="AudioStream" uid="uid://dtxinjg837qg4" path="res://sounds/switch22.ogg" id="4_3lxmt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2lhdj"]
 size = Vector2(4, 4)
 
-[node name="PressurePlate" type="Area2D" unique_id=2069666873]
+[node name="PressurePlate" type="Area2D" unique_id=2069666873 groups=["PuzzleInputs"]]
 script = ExtResource("1_80g1c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=319690498]
@@ -18,3 +20,13 @@ z_index = -1
 position = Vector2(4, 4.5)
 texture = ExtResource("1_dh3xf")
 hframes = 2
+
+[node name="PressSound" type="AudioStreamPlayer2D" parent="." unique_id=1189045458]
+position = Vector2(4, 8)
+stream = ExtResource("3_ibqte")
+volume_db = -1.0
+
+[node name="ReleaseSound" type="AudioStreamPlayer2D" parent="." unique_id=585139736]
+position = Vector2(4, 8)
+stream = ExtResource("4_3lxmt")
+volume_db = -2.0

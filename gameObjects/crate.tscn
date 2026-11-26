@@ -2,12 +2,28 @@
 
 [ext_resource type="Script" uid="uid://fbgg6et4ikbu" path="res://scripts/crate.gd" id="1_rb2yb"]
 [ext_resource type="Texture2D" uid="uid://dhcmgrytfakqt" path="res://art/crate.png" id="2_qrx01"]
+[ext_resource type="AudioStream" uid="uid://b6q7ag15cdgrx" path="res://sounds/footstep_wood_000.ogg" id="3_dc2gf"]
+[ext_resource type="AudioStream" uid="uid://dm4u1xmtvlddq" path="res://sounds/footstep_wood_001.ogg" id="4_lj8a3"]
+[ext_resource type="AudioStream" uid="uid://xgyk6txamftv" path="res://sounds/footstep_wood_002.ogg" id="5_ir0f8"]
+[ext_resource type="AudioStream" uid="uid://vt616sit7qm5" path="res://sounds/footstep_wood_003.ogg" id="6_5nrxv"]
+[ext_resource type="AudioStream" uid="uid://cveeamimywe78" path="res://sounds/footstep_wood_004.ogg" id="7_l5lmv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2lhdj"]
 size = Vector2(8, 8)
 
-[node name="Crate" type="CharacterBody2D" unique_id=1202694334]
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_7rfrt"]
+random_pitch = 1.122462
+random_volume_offset_db = 2.0
+streams_count = 5
+stream_0/stream = ExtResource("3_dc2gf")
+stream_1/stream = ExtResource("4_lj8a3")
+stream_2/stream = ExtResource("5_ir0f8")
+stream_3/stream = ExtResource("6_5nrxv")
+stream_4/stream = ExtResource("7_l5lmv")
+
+[node name="Crate" type="CharacterBody2D" unique_id=1202694334 node_paths=PackedStringArray("move_sound") groups=["PuzzleLocks", "PuzzleResets"]]
 script = ExtResource("1_rb2yb")
+move_sound = NodePath("MoveSound")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=163173072]
 position = Vector2(4, 4)
@@ -16,3 +32,8 @@ shape = SubResource("RectangleShape2D_2lhdj")
 [node name="Skull" type="Sprite2D" parent="." unique_id=804785182]
 position = Vector2(4, 4)
 texture = ExtResource("2_qrx01")
+
+[node name="MoveSound" type="AudioStreamPlayer2D" parent="." unique_id=529414613]
+position = Vector2(4, 8)
+stream = SubResource("AudioStreamRandomizer_7rfrt")
+volume_db = -9.0

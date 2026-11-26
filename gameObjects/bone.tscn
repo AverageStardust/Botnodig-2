@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://6jr3q5n2nb5l" path="res://scripts/bone.gd" id="1_txreb"]
 [ext_resource type="Texture2D" uid="uid://dupqqudgjxwhn" path="res://art/bone.png" id="2_txreb"]
+[ext_resource type="AudioStream" uid="uid://bgtt0346dkin2" path="res://sounds/jingles_SAX00.ogg" id="3_5aqyr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2lhdj"]
 size = Vector2(4, 4)
@@ -17,3 +18,8 @@ shape = SubResource("RectangleShape2D_2lhdj")
 z_index = -1
 position = Vector2(4, 4)
 texture = ExtResource("2_txreb")
+
+[node name="PickupSound" type="AudioStreamPlayer2D" parent="." unique_id=2104876618]
+position = Vector2(8, 4)
+stream = ExtResource("3_5aqyr")
+volume_db = 2.0

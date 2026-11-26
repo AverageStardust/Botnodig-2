@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://c465ilo3rimta" path="res://scripts/door.gd" id="1_1psv6"]
 [ext_resource type="Texture2D" uid="uid://bqfk5t0ynhlpu" path="res://art/door.png" id="2_mnltq"]
+[ext_resource type="AudioStream" uid="uid://comy0uuy6yhrm" path="res://sounds/doorOpen_1.ogg" id="3_tbs56"]
+[ext_resource type="AudioStream" uid="uid://kli77sbrawd7" path="res://sounds/doorClose_1.ogg" id="4_veyjk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hp0ri"]
 size = Vector2(8, 8)
@@ -17,3 +19,13 @@ shape = SubResource("RectangleShape2D_hp0ri")
 position = Vector2(4, 4)
 texture = ExtResource("2_mnltq")
 hframes = 4
+
+[node name="OpenSound" type="AudioStreamPlayer2D" parent="." unique_id=473286078]
+position = Vector2(8, 4)
+stream = ExtResource("3_tbs56")
+volume_db = 3.0
+
+[node name="CloseSound" type="AudioStreamPlayer2D" parent="." unique_id=1397333765]
+position = Vector2(8, 4)
+stream = ExtResource("4_veyjk")
+volume_db = 1.0

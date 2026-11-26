@@ -5,11 +5,14 @@ const GRID_SIZE = 8
 const MAX_SPEED = 36.0
 const ACCELERATION = 12.0
 
+@export var move_sound: AudioStreamPlayer2D
+
 var _grid_position: Vector2
 var _future_grid_position: Vector2
 var _is_moving_horizontal: bool = false
 var _is_moving_vertical: bool = false
 var _speed: float = 0
+var _moveable: bool = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -34,23 +37,27 @@ func _process(delta: float) -> void:
 		_is_moving_vertical = false
 
 func move(direction: Vector2) -> bool:
-	var success = true
+	if not _moveable:
+		return false
+	
+	var success = false
 	
 	if direction.x != 0 and not _is_moving_horizontal:
 		var offset = Vector2(sign(direction.x) * GRID_SIZE, 0)
 		
 		if _check_grid(offset):
 			_is_moving_horizontal = true
-		else:
-			success = false
+			success = true
 	
 	if direction.y != 0 and not _is_moving_vertical:
 		var offset = Vector2(0, sign(direction.y) * GRID_SIZE)
 		
 		if _check_grid(offset):
 			_is_moving_vertical = true
-		else:
-			success = false
+			success = true
+	
+	if success and move_sound != null:
+		move_sound.play()
 	
 	return success
 
