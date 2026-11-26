@@ -11,6 +11,7 @@ func _ready() -> void:
 	for node in get_children():
 		if node is PuzzleJingle:
 			node.complete_room.connect(complete)
+			node.lock_room.connect(lock)
 
 func reset():
 	for node in get_children():
@@ -20,6 +21,7 @@ func reset():
 func complete():
 	is_complete = true
 
+func lock():
 	for node in get_children():
 		if node.is_in_group("PuzzleLocks"):
 			node.lock()

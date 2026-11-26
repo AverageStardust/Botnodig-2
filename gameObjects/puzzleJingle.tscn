@@ -8,3 +8,4 @@ position = Vector2(4, 8)
 stream = ExtResource("1_lt8f3")
 volume_db = 2.0
 script = ExtResource("1_1einb")
+require_player_off_presure_plate = true

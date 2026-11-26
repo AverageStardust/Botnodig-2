@@ -8,9 +8,11 @@ const MAX_SPEED = 36.0
 const ACCELERATION = 12.0
 
 @export var move_sound: AudioStreamPlayer2D
+@export var slip_sound: AudioStreamPlayer2D
 
 var _grid_position: Vector2
 var _future_grid_position: Vector2
+var _slip_direction: Vector2
 var _is_moving_horizontal: bool = false
 var _is_moving_vertical: bool = false
 var _speed: float = 0
@@ -23,6 +25,10 @@ func _ready() -> void:
 	global_position = _grid_position
 
 func _process(delta: float) -> void:
+	if _slip_direction != Vector2.ZERO && _future_grid_position == _grid_position:
+		if not _move_if_allowed(_slip_direction):
+			_slip_direction = Vector2.ZERO
+	
 	if global_position == _future_grid_position:
 		_speed = 0
 	else:
@@ -30,16 +36,21 @@ func _process(delta: float) -> void:
 		
 	global_position = global_position.move_toward(_future_grid_position, delta * _speed)
 	
-	if global_position.x == _future_grid_position.x:
-		_grid_position.x = _future_grid_position.x
-		_is_moving_horizontal = false
-	
-	if global_position.y == _future_grid_position.y:
-		_grid_position.y = _future_grid_position.y
-		_is_moving_vertical = false
+	if Ground.instance != null:
+		if global_position.x == _future_grid_position.x:
+			_grid_position.x = _future_grid_position.x
+			_is_moving_horizontal = false
+			if (_slip_direction.x != 0 && not Ground.instance.is_slipery(_grid_position)):
+				_slip_direction = Vector2.ZERO
+		
+		if global_position.y == _future_grid_position.y:
+			_grid_position.y = _future_grid_position.y
+			_is_moving_vertical = false
+			if (_slip_direction.y != 0 && not Ground.instance.is_slipery(_grid_position)):
+				_slip_direction = Vector2.ZERO
 
 func move(direction: Vector2) -> bool:
-	if not _moveable:
+	if not _moveable or _slip_direction != Vector2.ZERO:
 		return false
 	
 	var success = false
@@ -47,23 +58,23 @@ func move(direction: Vector2) -> bool:
 	if direction.x != 0 and not _is_moving_horizontal:
 		var offset = Vector2(sign(direction.x) * GRID_SIZE, 0)
 		
-		if _check_grid(offset):
+		if _move_if_allowed(offset):
 			_is_moving_horizontal = true
 			success = true
+	
+	if _slip_direction != Vector2.ZERO:
+		return success
 	
 	if direction.y != 0 and not _is_moving_vertical:
 		var offset = Vector2(0, sign(direction.y) * GRID_SIZE)
 		
-		if _check_grid(offset):
+		if _move_if_allowed(offset):
 			_is_moving_vertical = true
 			success = true
 	
-	if success and move_sound != null:
-		move_sound.play()
-	
 	return success
 
-func _check_grid(offset: Vector2) -> bool:
+func _move_if_allowed(offset: Vector2) -> bool:
 	var space_state = get_world_2d().direct_space_state
 	var query = PhysicsPointQueryParameters2D.new()
 	
@@ -98,6 +109,16 @@ func _check_grid(offset: Vector2) -> bool:
 				return false
 	
 	_future_grid_position += offset
+	
+	if (_slip_direction == Vector2.ZERO and Ground.instance != null and 
+		Ground.instance.is_slipery(_future_grid_position)):
+		_slip_direction = offset
+	
+	if _slip_direction != Vector2.ZERO and slip_sound != null:
+		slip_sound.play()
+	elif move_sound != null:
+		move_sound.play()
+	
 	return true
 
 func get_current_grid_position():

@@ -13,7 +13,7 @@ size = Vector2(8, 8)
 script = ExtResource("1_igspw")
 _lines = Array[String](["I was tired of sleeping in that dirty hole.", "Wait a minute... something is wrong.", "Oh silly me, I lost all my bones while climbing out!", "Could you help find me find 5 bones?", "* Woof, bark baark *", "(Sure thing, I love finding bones!)"])
 _alt_lines = Array[String](["Thank you dog! This should be enough bones.", "Just give me a moment..."])
-_alt_bone_requirement = 5
+_alt_bone_requirement = 6
 _alt_loads_scene = ExtResource("2_ehn5s")
 _show_bones = true
 

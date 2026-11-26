@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://mg6evg17mecn"]
+
+[ext_resource type="Script" uid="uid://c2yeutc2x41hx" path="res://scripts/lever.gd" id="1_p1yxe"]
+[ext_resource type="Texture2D" uid="uid://b5oc7cyap8cw0" path="res://art/lever.png" id="2_p1yxe"]
+[ext_resource type="AudioStream" uid="uid://df64nlr1et6m6" path="res://sounds/switch9.ogg" id="3_p1yxe"]
+[ext_resource type="AudioStream" uid="uid://byafspkjsx8u3" path="res://sounds/switch10.ogg" id="4_n5bxa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2lhdj"]
+size = Vector2(4, 4)
+
+[node name="Lever" type="Area2D" unique_id=2069666873 groups=["PuzzleInputs"]]
+script = ExtResource("1_p1yxe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=319690498]
+position = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_2lhdj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2146735225]
+z_index = -1
+position = Vector2(4, 4)
+texture = ExtResource("2_p1yxe")
+hframes = 3
+
+[node name="OnSound" type="AudioStreamPlayer2D" parent="." unique_id=1189045458]
+position = Vector2(4, 8)
+stream = ExtResource("3_p1yxe")
+volume_db = 1.0
+
+[node name="OffSound" type="AudioStreamPlayer2D" parent="." unique_id=585139736]
+position = Vector2(4, 8)
+stream = ExtResource("4_n5bxa")

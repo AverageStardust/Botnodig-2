@@ -3,16 +3,20 @@
 [ext_resource type="Texture2D" uid="uid://dxkmg0kkm8lag" path="res://art/player.png" id="1_qk6tt"]
 [ext_resource type="Script" uid="uid://dkwv4cgrxcalq" path="res://scripts/player.gd" id="1_snumf"]
 [ext_resource type="Script" uid="uid://db0si68iqf5xh" path="res://scripts/characterSprite.gd" id="2_snumf"]
+[ext_resource type="AudioStream" uid="uid://xild265of7hi" path="res://sounds/wet_glass_1.ogg" id="4_6t23p"]
 [ext_resource type="AudioStream" uid="uid://8asg2ad5l660" path="res://sounds/footstep_grass_000.ogg" id="4_26hnd"]
 [ext_resource type="AudioStream" uid="uid://c8cihvbvsbhn5" path="res://sounds/footstep_grass_001.ogg" id="5_1iytq"]
+[ext_resource type="AudioStream" uid="uid://bnp45vdxqakkx" path="res://sounds/wet_glass_2.ogg" id="5_n8jd0"]
 [ext_resource type="AudioStream" uid="uid://dcr88xebmole8" path="res://sounds/footstep_grass_002.ogg" id="6_seq2l"]
 [ext_resource type="AudioStream" uid="uid://bwjln8bvpyhs2" path="res://sounds/footstep_grass_003.ogg" id="7_22fcj"]
+[ext_resource type="AudioStream" uid="uid://chvg8xchqaacb" path="res://sounds/wet_glass_4.ogg" id="7_eho78"]
 [ext_resource type="AudioStream" uid="uid://dxxi5np82my1e" path="res://sounds/footstep_grass_004.ogg" id="8_jcntc"]
+[ext_resource type="AudioStream" uid="uid://dsfb6nqvqlxto" path="res://sounds/wet_glass_6.ogg" id="11_eho78"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2lhdj"]
 size = Vector2(8, 8)
 
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_2lhdj"]
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_6rrl0"]
 random_pitch = 1.122462
 random_volume_offset_db = 4.0
 streams_count = 5
@@ -22,9 +26,19 @@ stream_2/stream = ExtResource("6_seq2l")
 stream_3/stream = ExtResource("7_22fcj")
 stream_4/stream = ExtResource("8_jcntc")
 
-[node name="Player" type="CharacterBody2D" unique_id=1202694334 node_paths=PackedStringArray("move_sound")]
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_eho78"]
+random_pitch = 1.122462
+random_volume_offset_db = 4.0
+streams_count = 4
+stream_0/stream = ExtResource("4_6t23p")
+stream_1/stream = ExtResource("5_n8jd0")
+stream_2/stream = ExtResource("7_eho78")
+stream_3/stream = ExtResource("11_eho78")
+
+[node name="Player" type="CharacterBody2D" unique_id=1202694334 node_paths=PackedStringArray("move_sound", "slip_sound")]
 script = ExtResource("1_snumf")
 move_sound = NodePath("MoveSound")
+slip_sound = NodePath("SlipSound")
 
 [node name="CharacterSprite" type="Sprite2D" parent="." unique_id=869937961]
 position = Vector2(4, 4)
@@ -38,8 +52,15 @@ shape = SubResource("RectangleShape2D_2lhdj")
 
 [node name="MoveSound" type="AudioStreamPlayer2D" parent="." unique_id=2144245562]
 position = Vector2(4, 8)
-stream = SubResource("AudioStreamRandomizer_2lhdj")
-volume_db = -15.0
+stream = SubResource("AudioStreamRandomizer_6rrl0")
+volume_db = -17.0
+max_polyphony = 4
+
+[node name="SlipSound" type="AudioStreamPlayer2D" parent="." unique_id=1625832432]
+position = Vector2(4, 8)
+stream = SubResource("AudioStreamRandomizer_eho78")
+volume_db = -10.0
+max_polyphony = 4
 
 [node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=754159305]
 position = Vector2(4, 4)
