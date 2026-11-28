@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cxphjmd3gt7lf"]
 
 [ext_resource type="Script" uid="uid://c465ilo3rimta" path="res://scripts/door.gd" id="1_1psv6"]
-[ext_resource type="Texture2D" uid="uid://bqfk5t0ynhlpu" path="res://art/door.png" id="2_mnltq"]
+[ext_resource type="Texture2D" uid="uid://w7mxl2v34hp8" path="res://art/slopDoor.png" id="2_tbs56"]
 [ext_resource type="AudioStream" uid="uid://comy0uuy6yhrm" path="res://sounds/doorOpen_1.ogg" id="3_tbs56"]
 [ext_resource type="AudioStream" uid="uid://kli77sbrawd7" path="res://sounds/doorClose_1.ogg" id="4_veyjk"]
 
@@ -17,7 +17,8 @@ shape = SubResource("RectangleShape2D_hp0ri")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=427034365]
 position = Vector2(4, 4)
-texture = ExtResource("2_mnltq")
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_tbs56")
 hframes = 4
 
 [node name="OpenSound" type="AudioStreamPlayer2D" parent="." unique_id=473286078]

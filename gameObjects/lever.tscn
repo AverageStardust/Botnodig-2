@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://mg6evg17mecn"]
 
 [ext_resource type="Script" uid="uid://c2yeutc2x41hx" path="res://scripts/lever.gd" id="1_p1yxe"]
-[ext_resource type="Texture2D" uid="uid://b5oc7cyap8cw0" path="res://art/lever.png" id="2_p1yxe"]
+[ext_resource type="Texture2D" uid="uid://g6gl50l54u6d" path="res://art/slopLever.png" id="2_p1yxe"]
 [ext_resource type="AudioStream" uid="uid://df64nlr1et6m6" path="res://sounds/switch9.ogg" id="3_p1yxe"]
 [ext_resource type="AudioStream" uid="uid://byafspkjsx8u3" path="res://sounds/switch10.ogg" id="4_n5bxa"]
 
@@ -18,6 +18,7 @@ shape = SubResource("RectangleShape2D_2lhdj")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2146735225]
 z_index = -1
 position = Vector2(4, 4)
+scale = Vector2(0.05, 0.05)
 texture = ExtResource("2_p1yxe")
 hframes = 3
 

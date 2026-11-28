@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c6pm1b0rmim6a"]
 
 [ext_resource type="Script" uid="uid://dunb8gn4ua0h0" path="res://scripts/pressurePlate.gd" id="1_80g1c"]
-[ext_resource type="Texture2D" uid="uid://d3w874ux0g8ur" path="res://art/pressurePlate.png" id="1_dh3xf"]
+[ext_resource type="Texture2D" uid="uid://byeg5nf2h1q0n" path="res://art/slopPressurePlate.png" id="2_3lxmt"]
 [ext_resource type="AudioStream" uid="uid://m1fann4v78ny" path="res://sounds/switch21.ogg" id="3_ibqte"]
 [ext_resource type="AudioStream" uid="uid://dtxinjg837qg4" path="res://sounds/switch22.ogg" id="4_3lxmt"]
 
@@ -18,7 +18,8 @@ shape = SubResource("RectangleShape2D_2lhdj")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2146735225]
 z_index = -1
 position = Vector2(4, 4.5)
-texture = ExtResource("1_dh3xf")
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_3lxmt")
 hframes = 2
 
 [node name="PressSound" type="AudioStreamPlayer2D" parent="." unique_id=1189045458]

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c4il8sya7v8d5"]
 
 [ext_resource type="Script" uid="uid://drgng4ldk8h4f" path="res://scripts/dialog.gd" id="1_ukr2l"]
-[ext_resource type="Texture2D" uid="uid://dn6kvv458hq3i" path="res://art/skeleton.png" id="2_5oxmx"]
+[ext_resource type="Texture2D" uid="uid://dbjmo167xtgda" path="res://art/slopSkeleton.png" id="2_5oxmx"]
 [ext_resource type="Script" uid="uid://db0si68iqf5xh" path="res://scripts/characterSprite.gd" id="4_n8y4d"]
 [ext_resource type="AudioStream" uid="uid://dywpadsseti16" path="res://sounds/jingles_STEEL09.ogg" id="5_b6fqv"]
 
@@ -14,6 +14,7 @@ _lines = Array[String](["There, I'm all back toggether thanks to you!"])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2008272035]
 position = Vector2(4, 0)
+scale = Vector2(0.05, 0.05)
 texture = ExtResource("2_5oxmx")
 hframes = 8
 script = ExtResource("4_n8y4d")

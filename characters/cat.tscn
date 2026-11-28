@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://crmwxuo3u7m6m"]
 
 [ext_resource type="Script" uid="uid://drgng4ldk8h4f" path="res://scripts/dialog.gd" id="1_oqvr0"]
-[ext_resource type="Texture2D" uid="uid://benq550jyf0jo" path="res://art/cat.png" id="2_oqvr0"]
+[ext_resource type="Texture2D" uid="uid://csfktpjh2fwm8" path="res://art/slopCat.png" id="2_2vyfe"]
 [ext_resource type="Script" uid="uid://db0si68iqf5xh" path="res://scripts/characterSprite.gd" id="3_bhynm"]
 [ext_resource type="AudioStream" uid="uid://xlhdxhx0bdv6" path="res://sounds/jingles_PIZZI09.ogg" id="4_2vyfe"]
 
@@ -15,7 +15,8 @@ _gives_bone = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2008272035]
 position = Vector2(4, 4)
-texture = ExtResource("2_oqvr0")
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_2vyfe")
 hframes = 2
 script = ExtResource("3_bhynm")
 

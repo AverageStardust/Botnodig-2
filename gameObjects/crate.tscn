@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d0drdjqsvi3ys"]
 
 [ext_resource type="Script" uid="uid://fbgg6et4ikbu" path="res://scripts/crate.gd" id="1_rb2yb"]
-[ext_resource type="Texture2D" uid="uid://dhcmgrytfakqt" path="res://art/crate.png" id="2_qrx01"]
+[ext_resource type="Texture2D" uid="uid://b3kqkpgxav0xl" path="res://art/slopCrate.png" id="2_l5lmv"]
 [ext_resource type="AudioStream" uid="uid://b6q7ag15cdgrx" path="res://sounds/footstep_wood_000.ogg" id="3_dc2gf"]
 [ext_resource type="AudioStream" uid="uid://dm4u1xmtvlddq" path="res://sounds/footstep_wood_001.ogg" id="4_lj8a3"]
 [ext_resource type="AudioStream" uid="uid://xgyk6txamftv" path="res://sounds/footstep_wood_002.ogg" id="5_ir0f8"]
@@ -43,9 +43,10 @@ slip_sound = NodePath("SlipSound")
 position = Vector2(4, 4)
 shape = SubResource("RectangleShape2D_2lhdj")
 
-[node name="Skull" type="Sprite2D" parent="." unique_id=804785182]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=804785182]
 position = Vector2(4, 4)
-texture = ExtResource("2_qrx01")
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_l5lmv")
 
 [node name="MoveSound" type="AudioStreamPlayer2D" parent="." unique_id=529414613]
 position = Vector2(4, 8)

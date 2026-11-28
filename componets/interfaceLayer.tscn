@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://vrgui7m07ec8"]
 
 [ext_resource type="Script" uid="uid://d0iyt8pkd8pw5" path="res://scripts/interfaceLayer.gd" id="1_fwfc1"]
-[ext_resource type="Texture2D" uid="uid://dupqqudgjxwhn" path="res://art/bone.png" id="1_g5n7q"]
-[ext_resource type="Texture2D" uid="uid://dgxvhlaj8qdo6" path="res://art/interfaceBox.png" id="2_7ldeq"]
+[ext_resource type="Texture2D" uid="uid://cvuchssfmlvcc" path="res://art/slopBone.png" id="3_7ldeq"]
+[ext_resource type="Texture2D" uid="uid://csg6pny2ejice" path="res://art/slopInterfaceBox.png" id="3_48bn2"]
 
 [node name="InterfaceLayer" type="CanvasLayer" unique_id=649183167]
 script = ExtResource("1_fwfc1")
@@ -11,22 +11,25 @@ script = ExtResource("1_fwfc1")
 modulate = Color(1, 1, 1, 0)
 offset_left = 12.0
 offset_top = 90.0
-offset_right = 116.0
-offset_bottom = 120.0
-texture = ExtResource("2_7ldeq")
-patch_margin_left = 2
-patch_margin_top = 2
-patch_margin_right = 2
-patch_margin_bottom = 2
+offset_right = 2092.0
+offset_bottom = 690.0
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("3_48bn2")
+patch_margin_left = 40
+patch_margin_top = 40
+patch_margin_right = 40
+patch_margin_bottom = 40
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
 
 [node name="Text" type="Label" parent="DialogRect" unique_id=132638622]
 custom_minimum_size = Vector2(192, 45)
 layout_mode = 0
-offset_left = 4.0
-offset_top = 4.0
-offset_right = 196.0
-offset_bottom = 49.0
-scale = Vector2(0.5, 0.5)
+offset_left = 80.0
+offset_top = 80.0
+offset_right = 272.0
+offset_bottom = 125.0
+scale = Vector2(10, 10)
 theme_override_constants/line_spacing = 3
 theme_override_font_sizes/font_size = 9
 autowrap_mode = 2
@@ -36,21 +39,25 @@ text_overrun_behavior = 1
 modulate = Color(1, 1, 1, 0)
 offset_left = 12.0
 offset_top = 8.0
-offset_right = 32.0
-offset_bottom = 19.0
-texture = ExtResource("2_7ldeq")
-patch_margin_left = 2
-patch_margin_top = 2
-patch_margin_right = 2
-patch_margin_bottom = 2
+offset_right = 412.0
+offset_bottom = 228.0
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("3_48bn2")
+patch_margin_left = 40
+patch_margin_top = 40
+patch_margin_right = 40
+patch_margin_bottom = 40
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
 
 [node name="Count" type="Label" parent="BoneRect" unique_id=1317568819]
 custom_minimum_size = Vector2(8, 9)
 layout_mode = 0
-offset_left = 2.0
-offset_top = 2.0
-offset_right = 10.0
-offset_bottom = 11.0
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 48.0
+offset_bottom = 49.0
+scale = Vector2(20, 20)
 theme_override_constants/line_spacing = 3
 theme_override_font_sizes/font_size = 9
 text = "0"
@@ -59,8 +66,8 @@ autowrap_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="BoneRect" unique_id=511069540]
 layout_mode = 0
-offset_left = 10.0
-offset_top = 2.0
-offset_right = 18.0
-offset_bottom = 10.0
-texture = ExtResource("1_g5n7q")
+offset_left = 200.0
+offset_top = 30.0
+offset_right = 360.0
+offset_bottom = 190.0
+texture = ExtResource("3_7ldeq")
